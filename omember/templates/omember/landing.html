@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load widget_tweaks %}
+
+{% block content %}
+  <!-- Masthead -->
+  <header class="masthead text-white text-center">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <h1 class="mb-5">Build a landing page for your business or project and generate more leads!</h1>
+        </div>
+        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+          <form action="" method="post">
+            {% csrf_token %}
+            <div class="form-row">
+              <div class="col-12 col-md-4 mb-2 mb-md-0">
+                <div>
+                  {% render_field form.name placeholder='Your Name' class='form-control form-control-lg' %}
+                </div>
+
+              </div>
+              <div class="col-12 col-md-5 mb-2 mb-md-0">
+                <div>
+                  {% render_field form.email placeholder='Your Email....' class='form-control form-control-lg' %}
+                </div>
+              </div>
+              <div class="col-12 col-md-3">
+                <button type="submit" class="btn btn-block btn-lg btn-primary">Sign up!</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </header>
+
+{% endblock content %}
